@@ -2,6 +2,7 @@ package com.example.Emailtest.Controller;
 
 import java.net.URI; // Fixed spelling
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.http.HttpStatus;
@@ -27,6 +28,10 @@ public class StudentController {
         this.studentService = studentService;
     }
 
+    @GetMapping
+    public List<Student> getAllStudent(){
+        return studentService.getAllStudent();
+    }
     @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public ResponseEntity<HttpsResponse> createStudent(@ModelAttribute Student student) {
         Student newStudent = studentService.saveStudent(student);

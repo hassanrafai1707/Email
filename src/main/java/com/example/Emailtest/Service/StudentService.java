@@ -7,6 +7,8 @@ import com.example.Emailtest.Repository.StudentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class StudentService {
@@ -31,5 +33,8 @@ public class StudentService {
         studentRepository.save(student);
         studentRepository. save(student);
         return Boolean.TRUE;
+    }
+    public List<Student> getAllStudent(){
+        return studentRepository.findAll();
     }
 }
