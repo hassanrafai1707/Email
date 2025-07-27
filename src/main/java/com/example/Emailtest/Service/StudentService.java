@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class StudentService {
     private final StudentRepository studentRepository;
     private final ConformationRepository conformationRepository;
+    private final EmailService emailService;
 
     public Student saveStudent(Student student){
         if(studentRepository.existsByEmail(student.getEmail())){
@@ -21,6 +22,7 @@ public class StudentService {
         studentRepository.save(student);
         Conformation conformation =new Conformation(student);
         conformationRepository.save(conformation);
+        emailService.sendVerifyEmail(student.getEmail(), student.getName(), conformation.getToken());
     return student;
     }
     public Boolean verifyToken(String token){
