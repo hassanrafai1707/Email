@@ -1,10 +1,18 @@
 package com.example.Emailtest.Domain;
 
-import jakarta.persistence.*;
-import lombok.*;
-import lombok.experimental.SuperBuilder;
-
 import java.time.LocalDate;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.experimental.SuperBuilder;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,7 +23,12 @@ import java.time.LocalDate;
 @Table(name = "Student")
 public class Student {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(
+        name="studentSequence",
+        sequenceName="studentSequence",
+        allocationSize=1
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="studentSequence")
     Long Id;
     LocalDate dob;
     String name;
