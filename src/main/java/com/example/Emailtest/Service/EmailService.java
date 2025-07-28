@@ -21,6 +21,7 @@ public class EmailService {
             message.setSubject("Verify Account");
             message.setText(token);
         } catch (Exception e) {
+            log.error("Failed to send verification email to {}: {}", toEmail, e.getMessage(), e);
            log.error(e.getMessage());
             throw new RuntimeException(e.getMessage());
         }
