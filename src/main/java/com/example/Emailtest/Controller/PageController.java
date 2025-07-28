@@ -10,8 +10,8 @@ public class PageController {
     public String index(){
         return "index";
     }
-    @GetMapping("/loginPage")
+    @GetMapping("/SigninPage")
     public String loginPage() {
-        return "loginPage";
+        return "SigninPage";
     }
 }
