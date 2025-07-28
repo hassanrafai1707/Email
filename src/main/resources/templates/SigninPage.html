@@ -9,7 +9,7 @@
   <body>
     <div class="loginContainer">
       <h2 class="loginTital">Login</h2>
-      <form action="/api/student" method="post">
+      <form action="/api/student/register" method="post">
         <label for="name">Username:</label><br />
         <input type="text" id="name" name="name" /><br /><br />
 
@@ -18,6 +18,14 @@
 
         <label for="email">Email</label>
         <input type="email" id="email" name="email" /><br /><br />
+
+        <label for="course">Select course</label><br />
+        <select name="course" id="course">
+          <option value="java">java</option>
+          <option value="python">python</option>
+          <option value="c">C</option>
+          <option value="javascript">javascript</option></select
+        ><br /><br />
 
         <label for="dob">Date of birth</label>
         <input type="date" id="dob" name="dob" /><br /><br />

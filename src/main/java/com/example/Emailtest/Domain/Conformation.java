@@ -12,6 +12,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -28,7 +29,12 @@ import lombok.Setter;
 @Table(name = "Conformation")
 public class Conformation {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+     @SequenceGenerator(
+        name="studentSequence",
+        sequenceName="studentSequence",
+        allocationSize=1
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="studentSequence")
     Long Id;
     public String token;
     @Temporal(TemporalType.TIMESTAMP)

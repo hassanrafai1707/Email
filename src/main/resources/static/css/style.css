@@ -13,7 +13,7 @@
         border-radius: 10px;
       }
       input[type="submit"]:hover{
-        background-color: blue;
+        background-color: rgb(153, 153, 251);
       }
       input[type="submit"]{
         width: 100%;
@@ -26,6 +26,13 @@
         padding: 5px;
         border-radius: 4px;
         cursor: pointer;
+      }
+      select{
+        padding: 10px;
+        width: 100%;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+
       }
       body{
         display: flex;

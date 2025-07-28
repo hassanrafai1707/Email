@@ -2,6 +2,7 @@ package com.example.Emailtest.Domain;
 
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -34,6 +35,7 @@ public class Student {
     String name;
     String email;
     String password;
+    @Column(nullable=false)
     Boolean isEnable;
 
     public String getPassword() {
