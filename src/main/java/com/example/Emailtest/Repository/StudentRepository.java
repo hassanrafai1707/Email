@@ -5,11 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.example.Emailtest.Domain.Student;
 
-import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student,Long> {
     public Student findByEmail(String email);
     public Boolean existsByEmail(String email);
-    public List<Student> getAllStudent();
 }
