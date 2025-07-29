@@ -35,6 +35,7 @@ public class Student {
     String name;
     String email;
     String password;
+    String course;
     @Column(nullable=false)
     Boolean isEnable;
 
@@ -84,6 +85,12 @@ public class Student {
 
     public void setDob(LocalDate dob) {
         this.dob = dob;
+    }
+    public void setCourse(String course){
+        this.course=course;
+    }
+    public String getCourse(){
+        return course;
     }
 
 }

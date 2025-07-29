@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,7 +29,7 @@ public class StudentController {
     private final StudentService studentService;
 
     @GetMapping
-    @ResponseBody
+    @ResponseBody 
     public List<Student> getAllStudent(){
         return studentService.getAllStudent();
     }
@@ -36,6 +37,15 @@ public class StudentController {
     public String createStudent(@ModelAttribute Student student) {
         studentService.saveStudent(student);
         return "redirect:/success";
+    }
+    @PostMapping("/login")
+    public String processingLogin(@RequestParam String email ,@RequestParam String password,Model model){
+        if(studentService.valaiDateLogin(email, password) == null){
+            model.addAttribute("error","Invalid credentials or email not verified.");
+            model.addAttribute("student", new Student());
+            return "LoginPage";
+        }
+        return "redirect:/dashboard?email=" + email;
     }
 
     // @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)

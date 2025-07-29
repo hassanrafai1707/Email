@@ -21,7 +21,7 @@ public class EmailService {
             SimpleMailMessage message =new SimpleMailMessage();
             message.setTo(toEmail);
             message.setSubject("Verify Account");
-            message.setText("Hello"+name+",\n\nPlease verify your email"+verificationLink);
+            message.setText("Hello"+name+",\n\nPlease verify your email "+verificationLink);
             javaMailSender.send(message);
         } catch (Exception e) {
             log.error("Failed to send verification email to {}: {}", toEmail, e.getMessage(), e);

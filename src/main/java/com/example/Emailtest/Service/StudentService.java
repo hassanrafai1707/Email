@@ -39,6 +39,13 @@ public class StudentService {
         studentRepository.save(student);
         return Boolean.TRUE;
     }
+    public Student valaiDateLogin(String email, String password){
+        Student student =studentRepository.findByEmail(email);
+        if(student==null || !student.getPassword().equals(password)/*|| !student.getEnable()*/){
+            return null;
+        }
+        return student;
+    }
     public List<Student> getAllStudent(){
         return studentRepository.findAll();
     }

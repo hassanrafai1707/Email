@@ -1,43 +1,63 @@
-    .loginTital {
-        font-style: italic;
-        font-size: medium;
-        font-weight: bolder;
-        color: rgb(221, 91, 27);
-      }
-      .loginContainer{
-        width: 300px;
-        background-color: rgb(196, 195, 195);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 10px;
-      }
-      input[type="submit"]:hover{
-        background-color: rgb(153, 153, 251);
-      }
-      input[type="submit"]{
-        width: 100%;
-        background-color: azure;
-        padding: 5px;
-        border-radius: 4px
-      }
-      input[type="text"],[type="password"],[type="email"],[type="date"]{
-        width: 100%;
-        padding: 5px;
-        border-radius: 4px;
-        cursor: pointer;
-      }
-      select{
-        padding: 10px;
-        width: 100%;
-        border: 1px solid #aaa;
-        border-radius: 5px;
+body {
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
 
-      }
-      body{
-        display: flex;
-        background-color:white;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-      }
+.loginContainer,
+.SigninContainer {
+  width: 300px;
+  background-color: rgb(196, 195, 195);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 10px;
+}
+
+.loginTitle,
+.SigninTitle {
+  font-style: italic;
+  font-size: medium;
+  font-weight: bolder;
+  color: rgb(221, 91, 27);
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+input[type="submit"],
+button[type="submit"] {
+  width: 100%;
+  background-color: azure;
+  padding: 5px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover,
+button[type="submit"]:hover {
+  background-color: rgb(153, 153, 251);
+}
