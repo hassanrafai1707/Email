@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Test</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <h1 class="H1Title">view Student Details</h1>
+        <table>
+          <caption>
+            Student Details
+          </caption>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Dob</th>
+              <th>course</th>
+              <th>isEnable</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr th:each="student : ${students}">
+              <td th:text="${student.id}">ID</td>
+              <td th:text="${student.name}">Name</td>
+              <td th:text="${student.email}">Email</td>
+              <td th:text="${student.dob}">DOB</td>
+              <td th:text="${student.course}">Course</td>
+              <td th:text="${student.isEnable}">Is Enabled</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>

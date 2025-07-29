@@ -48,6 +48,12 @@ public class StudentController {
         return "redirect:/dashboard?email=" + email;
     }
 
+    @GetMapping("/view")
+    public String viewStudent(Model model) {
+        List<Student> students = studentService.getAllStudent();
+        model.addAttribute("students", students);
+        return "test";
+    }
     // @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     // public ResponseEntity<HttpsResponse> createStudent(@ModelAttribute Student student) {
     //     Student newStudent = studentService.saveStudent(student);

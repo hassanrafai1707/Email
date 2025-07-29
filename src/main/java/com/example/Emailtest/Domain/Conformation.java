@@ -29,12 +29,12 @@ import lombok.Setter;
 @Table(name = "Conformation")
 public class Conformation {
     @Id
-     @SequenceGenerator(
-        name="studentSequence",
-        sequenceName="studentSequence",
+    @SequenceGenerator(
+        name="ConformationSequence",
+        sequenceName="ConformationSequence",
         allocationSize=1
-    )
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="studentSequence")
+        )
+        @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="ConformationSequence")
     Long Id;
     public String token;
     @Temporal(TemporalType.TIMESTAMP)

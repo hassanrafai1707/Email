@@ -61,3 +61,49 @@ input[type="submit"]:hover,
 button[type="submit"]:hover {
   background-color: rgb(153, 153, 251);
 }
+.H1Title {
+  color: #0c0c0c;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #323232;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+td {
+  color: white;
+  padding: 10px;
+}
+tr,
+caption,
+th {
+  padding: 8px;
+  color: white;
+  text-align: center;
+}
+caption {
+  font-size: 1.2em;
+  background-color: hsl(0 0% 0%);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+th {
+  background-color: hsl(0 0% 0% /0.5);
+}
+tr:nth-of-type(2n) {
+  background-color: hsl(0 0% 0% /0.1);
+}

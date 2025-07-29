@@ -30,14 +30,14 @@ public class Student {
         allocationSize=1
     )
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="studentSequence")
-    Long Id;
-    LocalDate dob;
-    String name;
-    String email;
-    String password;
-    String course;
+    public Long Id;
+    public LocalDate dob;
+    public String name;
+    public String email;
+    public String password;
+    public String course;
     @Column(nullable=false)
-    Boolean isEnable;
+    public Boolean isEnable;
 
     public String getPassword() {
         return password;
