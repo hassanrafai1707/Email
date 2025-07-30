@@ -1,13 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" th:href="@{/css/style.css}" />
-    <title>Dashboard</title>
-  </head>
-  <body>
-    <h1>Welcome to Dashboard</h1>
-    <p th:text="'Login as '+${email}"></p>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" th:href="@{/css/style.css}" />
+  <title>Dashboard</title>
+</head>
+<body>
+<h1>Welcome [[${student.name}]]</h1>
+<p><strong>ID:</strong> [[${student.id}]]</p>
+<p><strong>Email:</strong> [[${student.email}]]</p>
+
+<h2>Your Performance</h2>
+<ul>
+  <li>Events Hosted: [[${performance.eventsHost}]]</li>
+  <li>Feedback Score: [[${performance.feedBackScore}]]</li>
+  <li>Points Earned: [[${performance.pointEarned}]]</li>
+  <li>Last Updated: [[${performance.lastUpdate}]]</li>
+</ul>
+</body>
 </html>

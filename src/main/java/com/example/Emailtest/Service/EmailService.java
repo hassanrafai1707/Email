@@ -17,7 +17,7 @@ public class EmailService {
 
     public void sendVerifyEmail(String toEmail,String name ,String token){ 
         try {
-             String verificationLink = "http://localhost:8080/api/student/confirm?token=" + token;
+             String verificationLink = "http://localhost:8081/api/student/confirm?token=" + token;
             SimpleMailMessage message =new SimpleMailMessage();
             message.setTo(toEmail);
             message.setSubject("Verify Account");

@@ -4,6 +4,11 @@ import java.time.LocalDateTime; // Fixed spelling
 import java.util.List;
 import java.util.Map;
 
+import com.example.Emailtest.Domain.Performance;
+import com.example.Emailtest.Service.PerformanceService;
+import com.sun.net.httpserver.HttpsServer;
+import jakarta.persistence.Id;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -27,6 +32,7 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api/student") // Removed trailing slash for consistency
 public class StudentController {
     private final StudentService studentService;
+    private final PerformanceService performanceService;
 
     @GetMapping
     @ResponseBody 
@@ -39,13 +45,16 @@ public class StudentController {
         return "redirect:/success";
     }
     @PostMapping("/login")
-    public String processingLogin(@RequestParam String email ,@RequestParam String password,Model model){
-        if(studentService.valaiDateLogin(email, password) == null){
+    public String processingLogin(@RequestParam String email , @RequestParam String password, HttpSession session, Model model){
+        Student student = studentService.valaiDateLogin(email, password);
+        if(student == null){
             model.addAttribute("error","Invalid credentials or email not verified.");
             model.addAttribute("student", new Student());
             return "LoginPage";
         }
-        return "redirect:/dashboard?email=" + email;
+        session.setAttribute("Id",student.getId());
+        return "redirect:/api/student/Dashboard?Id=" + student.getId();
+
     }
 
     @GetMapping("/view")
@@ -60,6 +69,19 @@ public class StudentController {
     //     return ResponseEntity.created(URI.create("/api/student/" + newStudent.getId())).body(
     //             HttpsResponse.builder().timeStamp(LocalDateTime.now().toString()).data(Map.of("student", newStudent)).message("Student Created").status(HttpStatus.CREATED).statusCode(HttpStatus.CREATED.value()).build());
     // }
+    @GetMapping("/Dashboard")
+    public String showDashboard(@RequestParam("Id") Long Id, Model model) {
+        Student student = studentService.getStudentById(Id);
+        Performance performance = performanceService.getPerformanceById(Id);
+        if (student == null || performance == null) {
+            model.addAttribute("message", "Student or performance data not found.");
+            return "errorPage"; // or handle appropriately
+        }
+        model.addAttribute("student", student);
+        model.addAttribute("performance", performance);
+        return "Dashboard";
+    }
+
 
     @GetMapping("/confirm")
     public ResponseEntity<HttpsResponse> confirmStudent(@RequestParam("token") String token) {
