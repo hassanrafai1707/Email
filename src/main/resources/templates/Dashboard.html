@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" th:href="@{/css/style.css}" />
-  <title>Dashboard</title>
-</head>
-<body>
-<h1>Welcome [[${student.name}]]</h1>
-<p><strong>ID:</strong> [[${student.id}]]</p>
-<p><strong>Email:</strong> [[${student.email}]]</p>
-
-<h2>Your Performance</h2>
-<ul>
-  <li>Events Hosted: [[${performance.eventsHost}]]</li>
-  <li>Feedback Score: [[${performance.feedBackScore}]]</li>
-  <li>Points Earned: [[${performance.pointEarned}]]</li>
-  <li>Last Updated: [[${performance.lastUpdate}]]</li>
-</ul>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <h1 class="H1Title">Student Dashboard</h1>
+        <table>
+          <caption>
+            Performance Summary
+          </caption>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Events Hosted</th>
+              <th>Feedback Score</th>
+              <th>Points Earned</th>
+              <th>Last Updated</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td th:text="${student.id}">1</td>
+              <td th:text="${student.name}">Name</td>
+              <td th:text="${student.email}">email@example.com</td>
+              <td th:text="${performance.eventsHost}">0</td>
+              <td th:text="${performance.feedBackScore}">0.0</td>
+              <td th:text="${performance.pointEarned}">0</td>
+              <td th:text="${performance.lastUpdate}">2025-07-30</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </body>
 </html>

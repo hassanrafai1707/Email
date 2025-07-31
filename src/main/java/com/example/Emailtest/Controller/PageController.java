@@ -5,10 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.Emailtest.Domain.Student;
-import org.springframework.web.bind.annotation.RequestParam;
-;
-
-
 
 @Controller
 public class PageController {

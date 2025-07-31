@@ -1,14 +1,9 @@
 package com.example.Emailtest.Controller;
 
-import java.time.LocalDateTime; // Fixed spelling
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
-import com.example.Emailtest.Domain.Performance;
-import com.example.Emailtest.Service.PerformanceService;
-import com.sun.net.httpserver.HttpsServer;
-import jakarta.persistence.Id;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -21,15 +16,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.example.Emailtest.Domain.HttpsResponse;
+import com.example.Emailtest.Domain.Performance;
 import com.example.Emailtest.Domain.Student;
+import com.example.Emailtest.Service.PerformanceService;
 import com.example.Emailtest.Service.StudentService;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 
-// @RestController
 @Controller
 @RequiredArgsConstructor
-@RequestMapping("/api/student") // Removed trailing slash for consistency
+@RequestMapping("/api/student") 
 public class StudentController {
     private final StudentService studentService;
     private final PerformanceService performanceService;
@@ -63,12 +60,6 @@ public class StudentController {
         model.addAttribute("students", students);
         return "test";
     }
-    // @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
-    // public ResponseEntity<HttpsResponse> createStudent(@ModelAttribute Student student) {
-    //     Student newStudent = studentService.saveStudent(student);
-    //     return ResponseEntity.created(URI.create("/api/student/" + newStudent.getId())).body(
-    //             HttpsResponse.builder().timeStamp(LocalDateTime.now().toString()).data(Map.of("student", newStudent)).message("Student Created").status(HttpStatus.CREATED).statusCode(HttpStatus.CREATED.value()).build());
-    // }
     @GetMapping("/Dashboard")
     public String showDashboard(@RequestParam("Id") Long Id, Model model) {
         Student student = studentService.getStudentById(Id);
@@ -81,8 +72,6 @@ public class StudentController {
         model.addAttribute("performance", performance);
         return "Dashboard";
     }
-
-
     @GetMapping("/confirm")
     public ResponseEntity<HttpsResponse> confirmStudent(@RequestParam("token") String token) {
         Boolean isSuccess = studentService.verifyToken(token);
