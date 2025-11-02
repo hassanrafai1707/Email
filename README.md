@@ -1,15 +1,42 @@
-## ✨ 📧 Email Service Application: Secure Email Automation
+# 📧 IAC 'Community Ambassador' Onboarding Process  
+### Global Professional Internship (GPI) Project  
+**Duration:** 120 Hours | **Organization:** Cloud Counselage IAC  
+**Domain:** Java Backend Development | **Intern:** Hassan Abdul Rahim Patel  
 
-[cite_start]This project is a **robust backend application** developed during an industry internship to provide secure and efficient **email-sending functionality**, seamlessly integrated with database management and a user-friendly interface[cite: 6]. It was engineered over a rigorous 9-week period, focusing on mastering modern Java development frameworks, version control best practices, and core software engineering principles.
+---
 
-### 🚀 Key Features
+## 🧩 Problem Statement
 
-* [cite_start]**Email Sending:** Implements and configures the **Simple Mail Transfer Protocol (SMTP)** for reliable, automated email delivery within the Spring Boot framework[cite: 30, 36].
-* [cite_start]**Data Persistence:** Seamlessly integrates with **PostgreSQL** using the **Java Database Connectivity (JDBC)** API to perform comprehensive **CRUD** (Create, Read, Update, Delete) operations[cite: 24].
-* [cite_start]**User Experience (UX) Enhancements:** Features redesigned and optimized **Login and Dashboard pages** for improved usability and clarity[cite: 42].
-* [cite_start]**Entity Mapping & Control:** Utilizes the `@GeneratedValue` annotation effectively for student entity ID generation and ensures accurate entity-to-database mapping[cite: 36].
-* [cite_start]**Feedback Workflows:** Developed clear **confirmation workflows** and dedicated **success pages** to provide users with immediate and positive feedback[cite: 36].
-* [cite_start]**Version Control:** Project history and collaboration were meticulously managed using **Git** as a distributed version control system and **GitHub** for code hosting[cite: 48].
+The *Industry Academia Community (IAC)* aims to help 10 million students become *job-ready by 2028*.  
+Community Ambassadors (CAs) are the bridge between IAC and students, spreading awareness and assisting peers in onboarding to IAC programs.
+
+To assess their efforts, each CA is assigned a unique **UTM link**. Tracking and automating this process ensures efficient performance monitoring and onboarding.
+
+---
+
+## 🏁 Objective
+
+Develop a **Java-based web application** to automate the *Community Ambassador Onboarding Process*, including:
+- Automating UTM link generation and distribution.
+- Sending welcome emails automatically upon form submission.
+- Tracking CA performance through UTM data.
+- Displaying onboarding insights through performance dashboards.
+
+---
+
+## 💡 Project Overview
+
+**Existing Manual Process:**
+1. A CA submits the *New Joinee Form* on the IAC website.  
+2. The team manually generates a UTM link and sends it through email.
+
+**Automated Solution (This Project):**
+- When a new CA registers, the system automatically:
+  1. Generates a UTM tracking link.
+  2. Sends a customized welcome email to the CA’s provided email ID.
+  3. Logs submission and tracking data into a PostgreSQL database.
+
+This automation streamlines CA onboarding, saves time, and minimizes human error.
 
 ---
 
@@ -45,6 +72,9 @@ Follow these steps to set up a local development environment for the Email Servi
 3.  **Run the Application:**
     * Open the project in your preferred Java IDE (IntelliJ IDEA, Eclipse).
     * Run the main Spring Boot application class.
+    * Using Terminal :
+    mvn clean install
+    mvn spring-boot:run
 
 [cite_start]The application server is configured to start on port **8081**[cite: 42].
 
@@ -78,20 +108,36 @@ Contributions are welcome! If you have suggestions for improving this project or
 4.  Push to the branch (`git push origin feature/AmazingFeature`).
 5.  Open a **Pull Request**.
 
-### 📄 License
+## 🗂️ Project Structure
+Email/
+├── src/
+│ ├── main/
+│ │ ├── java/com/FinalYearProject/FinalYearProject/
+│ │ │ ├── Config/ # SMTP & Server Configurations
+│ │ │ ├── Controller/ # REST & Web Controllers
+│ │ │ ├── Model/ # Entity Classes
+│ │ │ ├── Repository/ # Database Interfaces
+│ │ │ ├── Service/ # Business Logic
+│ │ │ └── FinalYearProjectApplication.java
+│ │ └── resources/
+│ │ ├── templates/ # Thymeleaf HTML Files
+│ │ ├── application.properties
+│ │ └── static/
+├── pom.xml # Maven Dependencies
+└── README.md
+### 📚 References
 
-Distributed under the **MIT License**. See `LICENSE.md` for more information (you should create this file separately).
+Java Mail API Documentation
+Spring Boot Documentation
+PostgreSQL Docs
+Cloud Counselage Website
+GitHub Repository
+Mentor: Prof. Madhavi M.
+###  👨‍💻 Author
 
----
-
-### 👤 Contact and Internship Details
-
-[cite_start]This project was a major output of the industry internship program[cite: 6].
-
-| Detail | Information |
-| :--- | :--- |
-| **Student Developer** | [cite_start]Hassan Patel [cite: 1] |
-| **Host Industry** | [cite_start]Cloud Counselage [cite: 3] |
-| **Institute Mentor** | [cite_start]Prof. Madhavi M. [cite: 2] |
-| **Academic Context** | [cite_start]2025-26 (Semester 5th) [cite: 5] |
-| **Repository Link** | `https://github.com/hassanrafai1707/Email` |
+Hassan Abdul Rahim Patel
+Linkin Profile:-
+https://www.linkedin.com/in/hassan-rafai-270399352/
+Diploma in Computer Engineering – Vidyalankar Polytechnic
+Roll No: 23203C0055
+📅 June–August 2025 | Cloud Counselage IAC Internship
