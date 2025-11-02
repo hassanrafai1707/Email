@@ -126,15 +126,13 @@ Email/
 └── README.md
 ### 📚 References
 
-Java Mail API Documentation
+Java Mail API Documentation: -https://javaee.github.io/javamail/
 
-Spring Boot Documentation
+Spring Boot Documentation:- https://spring.io/projects/spring-boot
 
-PostgreSQL Docs
+PostgreSQL Docs:- https://www.postgresql.org/docs/
 
-Cloud Counselage Website
-
-GitHub Repository
+Cloud Counselage Website:- https://www.industryacademiacommunity.com/
 
 Mentor: Prof. Madhavi M.
 
