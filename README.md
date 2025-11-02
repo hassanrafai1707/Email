@@ -72,7 +72,9 @@ Follow these steps to set up a local development environment for the Email Servi
 3.  **Run the Application:**
     * Open the project in your preferred Java IDE (IntelliJ IDEA, Eclipse).
     * Run the main Spring Boot application class.
-    * Using Terminal :  mvn clean install  mvn spring-boot:run
+    * Using Terminal :
+    * mvn clean install
+    * mvn spring-boot:run
 
 [cite_start]The application server is configured to start on port **8081**[cite: 42].
 
@@ -110,26 +112,32 @@ Contributions are welcome! If you have suggestions for improving this project or
 Email/
 ├── src/
 │ ├── main/
-│ │ ├── java/com/EmailtestApplication/EmailtestApplication/
-│ │ │ ├── Controller/ # REST & Web Controllers
-│ │ │ ├── Model/ # Entity Classes
-│ │ │ ├── Repository/ # Database Interfaces
-│ │ │ ├── Service/ # Business Logic
-│ │ │ └── EmailtestApplication.java
-│ │ └── resources/
-│ │ ├── templates/ # Thymeleaf HTML Files
-│ │ ├── application.properties
-│ │ └── static/
-├── pom.xml # Maven Dependencies
+│ │ ├── java/com/EmailtestApplication/EmailtestApplication/  
+│ │ │ ├── Controller/ # REST & Web Controllers  
+│ │ │ ├── Model/ # Entity Classes  
+│ │ │ ├── Repository/ # Database Interfaces  
+│ │ │ ├── Service/ # Business Logic  
+│ │ │ └── EmailtestApplication.java  
+│ │ └── resources/  
+│ │ ├── templates/ # Thymeleaf HTML Files  
+│ │ ├── application.properties  
+│ │ └── static/  
+├── pom.xml # Maven Dependencies  
 └── README.md
 ### 📚 References
 
 Java Mail API Documentation
+
 Spring Boot Documentation
+
 PostgreSQL Docs
+
 Cloud Counselage Website
+
 GitHub Repository
+
 Mentor: Prof. Madhavi M.
+
 ###  👨‍💻 Author
 
 Hassan Abdul Rahim Patel
