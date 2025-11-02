@@ -109,9 +109,9 @@ Contributions are welcome! If you have suggestions for improving this project or
 5.  Open a **Pull Request**.
 
 ## 🗂️ Project Structure
-Email/
-├── src/
-│ ├── main/
+Email/  
+├── src/  
+│ ├── main/  
 │ │ ├── java/com/EmailtestApplication/EmailtestApplication/  
 │ │ │ ├── Controller/ # REST & Web Controllers  
 │ │ │ ├── Model/ # Entity Classes  
@@ -138,11 +138,14 @@ GitHub Repository
 
 Mentor: Prof. Madhavi M.
 
-###  👨‍💻 Author
+###  👨‍💻 Author  
 
-Hassan Abdul Rahim Patel
+Hassan Abdul Rahim Patel  
+
 Linkin Profile:-
-https://www.linkedin.com/in/hassan-rafai-270399352/
+https://www.linkedin.com/in/hassan-rafai-270399352/  
+
 Diploma in Computer Engineering – Vidyalankar Polytechnic
-Roll No: 23203C0055
+Roll No: 23203C0055  
+
 📅 June–August 2025 | Cloud Counselage IAC Internship
