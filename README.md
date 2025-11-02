@@ -112,13 +112,12 @@ Contributions are welcome! If you have suggestions for improving this project or
 Email/
 ├── src/
 │ ├── main/
-│ │ ├── java/com/FinalYearProject/FinalYearProject/
-│ │ │ ├── Config/ # SMTP & Server Configurations
+│ │ ├── java/com/EmailtestApplication/EmailtestApplication/
 │ │ │ ├── Controller/ # REST & Web Controllers
 │ │ │ ├── Model/ # Entity Classes
 │ │ │ ├── Repository/ # Database Interfaces
 │ │ │ ├── Service/ # Business Logic
-│ │ │ └── FinalYearProjectApplication.java
+│ │ │ └── EmailtestApplication.java
 │ │ └── resources/
 │ │ ├── templates/ # Thymeleaf HTML Files
 │ │ ├── application.properties
