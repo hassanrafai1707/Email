@@ -72,7 +72,7 @@ Follow these steps to set up a local development environment for the Email Servi
 3.  **Run the Application:**
     * Open the project in your preferred Java IDE (IntelliJ IDEA, Eclipse).
     * Run the main Spring Boot application class.
-    * Using Terminal :                                                                                                                                                                                                    mvn clean install                                                                                                                                                                                                   mvn spring-boot:run
+    * Using Terminal :                                                                                                                                                                                                     mvn clean install                                                                                                                                                                                                   mvn spring-boot:run
 
 [cite_start]The application server is configured to start on port **8081**[cite: 42].
 
